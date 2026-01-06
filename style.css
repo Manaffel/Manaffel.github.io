@@ -10,6 +10,8 @@ body {
   color: #333;
   /* Full-page background image: ensure filename matches Images/ */
   background-image: url("Images/background.jpeg");
+  /* Fallback/background fill for any area not covered by the image */
+  background-color: #000;
   /* Scale width to full viewport while preserving aspect ratio */
   background-size: 100% auto;
   background-position: center top;
