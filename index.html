@@ -30,18 +30,43 @@
           instrumentation to study these objects.</p>
       </section>
 
-      <section id="research">
-        <h2>Research</h2>
-        <ul>
-            <li>Direct imaging of exoplanets and brown dwarfs</li>
-            <li>High-contrast imaging instrumentation</li>
-            <li>Adaptive optics systems</li>
-            <li>Data analysis techniques for high-contrast imaging</li>
-            <li>Optical interferometry</li>
-            <li>ELT METIS instrumentation</li>
-            <li>VLTI GRAVITY instrumentation</li>
-        </ul>
-      </section>
+        <section id="research">
+          <h2>Research</h2>
+
+          <div class="slideshow" id="research-slideshow">
+            <div class="slide" data-index="0">
+              <a href="Images/flow-chart.png" target="_blank" rel="noopener noreferrer">
+                <img class="slide-content" src="Images/flow-chart.png" alt="Flow chart">
+              </a>
+              <div class="caption">Flow chart — click to open (PNG)</div>
+            </div>
+
+            <div class="slide" data-index="1">
+              <a href="Images/variance_voltage_exposure.png" target="_blank" rel="noopener noreferrer">
+                <img class="slide-content" src="Images/variance_voltage_exposure.png" alt="Variance vs Voltage and Exposure">
+              </a>
+              <div class="caption">Variance vs Voltage and Exposure — click to open (PNG)</div>
+            </div>
+
+            <div class="slide" data-index="2">
+              <a href="Images/bcddl.png" target="_blank" rel="noopener noreferrer">
+                <img class="slide-content" src="Images/bcddl.png" alt="BCDDL plot">
+              </a>
+              <div class="caption">BCDDL — click to open (PNG)</div>
+            </div>
+
+            <div class="slide" data-index="3">
+              <a href="Images/visibilit_prediction.png" target="_blank" rel="noopener noreferrer">
+                <img class="slide-content" src="Images/visibilit_prediction.png" alt="Visibility prediction">
+              </a>
+              <div class="caption">Visibility prediction — click to open (PNG)</div>
+            </div>
+
+            <button class="slide-arrow prev" aria-label="Previous">‹</button>
+            <button class="slide-arrow next" aria-label="Next">›</button>
+          </div>
+
+        </section>
 
       <section id="publications">
         <h2>Publications</h2>
@@ -86,5 +111,39 @@
         sections.forEach(section => observer.observe(section));
       });
     </script>
+      <script>
+        // Slideshow for research section
+        (function () {
+          const slides = document.querySelectorAll('#research-slideshow .slide');
+          const nextBtn = document.querySelector('#research-slideshow .next');
+          const prevBtn = document.querySelector('#research-slideshow .prev');
+          let current = 0;
+          let timer = null;
+
+          function show(n) {
+            slides.forEach((s, i) => s.classList.toggle('active', i === n));
+          }
+
+          function next() { current = (current + 1) % slides.length; show(current); }
+          function prev() { current = (current - 1 + slides.length) % slides.length; show(current); }
+
+          function resetTimer() {
+            if (timer) clearInterval(timer);
+            timer = setInterval(next, 10000);
+          }
+
+          if (slides.length) {
+            show(0);
+            resetTimer();
+
+            if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); resetTimer(); });
+            if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); resetTimer(); });
+
+            // Prevent arrow clicks from following the image link
+            const anchors = document.querySelectorAll('#research-slideshow a');
+            anchors.forEach(a => a.addEventListener('click', (e) => { /* allow link to open */ }));
+          }
+        })();
+      </script>
   </body>
 </html>
