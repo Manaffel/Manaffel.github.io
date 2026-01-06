@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Name</title>
+  <link rel="stylesheet" href="style.css">
+
+    <body>
+      <nav class="top-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#research" class="nav-link">Research</a></li>
+          <li><a href="#paper" class="nav-link">Paper</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="container">
+        <header>
+          <h1>Jonas R. Sauter</h1>
+          <p>PhD candidate at the MPIA Heidelberg, Germany</p>
+        </header>
+
+        <section id="about me">
+          <h2>About Me</h2>
+          <p>I am an astronomer interested in direct imaging of exoplanets and brown dwarfs and the underlying 
+            instrumentation to observe these objects.</p>
+        </section>
+
+        <section id="research">
+          <h2>Research</h2>
+          <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+        </section>
+
+        <section id="publications">
+          <h2>Publications</h2>
+          <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <p>Email: sauter@mpia.de</p>
+        </section>
+
+        <footer>
+          <p>© 2026 Jonas R. Sauter</p>
+        </footer>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const sections = document.querySelectorAll('section[id]');
+          const navLinks = document.querySelectorAll('.top-nav a');
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              const id = entry.target.getAttribute('id');
+              const link = document.querySelector('.top-nav a[href="#' + id + '"]');
+              if (entry.isIntersecting) {
+                navLinks.forEach(a => a.classList.remove('active'));
+                if (link) link.classList.add('active');
+              }
+            });
+          }, { root: null, rootMargin: '0px 0px -60% 0px', threshold: 0 });
+
+          sections.forEach(section => observer.observe(section));
+        });
+      </script>
+    </body>
+    </footer>
+  </div>
+</body>
+</html>
