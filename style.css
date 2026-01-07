@@ -87,6 +87,15 @@ h3 {
   text-align: center;
 }
 
+.section-content a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section-content a:hover {
+  text-decoration: underline;
+}
+
 .subsection {
   background: rgba(255,255,255,0.2);
   border-radius: 8px;
