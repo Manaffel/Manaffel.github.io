@@ -212,3 +212,7 @@ h3 {
 @media (hover: none) {
   .slide-arrow { opacity: 0.8; }
 }
+
+footer {
+  text-align: right;
+}
