@@ -5,7 +5,7 @@ html, body {
 
 body {
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: 27px;
   line-height: 1.6;
   color: #333;
   /* Full-page background image: ensure filename matches Images/ */
@@ -45,7 +45,7 @@ body {
   color: #333;
   text-decoration: none;
   padding: 8px 6px;
-  font-size: 28px;
+  font-size: 42px;
   transition: color 0.15s ease, border-bottom 0.15s ease;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 40px auto 40px;
   padding: 20px;
   background: rgba(255,255,255,0.80);
@@ -83,8 +83,8 @@ h1 {
 /* Slideshow styles for research section */
 .slideshow {
   position: relative;
-  width: 800px;       /* fixed box width (responsive via max-width) */
-  height: 500px;      /* fixed box height */
+  width: 1200px;       /* fixed box width (responsive via max-width) */
+  height: 1000px;      /* fixed box height */
   max-width: 100%;
   margin: 0 auto 20px;
   background: transparent;   /* transparent box */
@@ -112,7 +112,7 @@ h1 {
 .slide-content {
   display: block;
   max-width: 100%;
-  max-height: calc(100% - 60px); /* leave room for caption */
+  max-height: calc(100% - 300px); /* leave room for caption */
   width: auto;
   height: auto;
   margin: 0 auto;
@@ -123,7 +123,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: calc(100% - 60px); /* same available area as slide-content max-height */
+  height: calc(100% - 300px); /* same available area as slide-content max-height */
 }
 
 /* Let embedded objects and images scale to the available area without cropping */
@@ -147,10 +147,10 @@ h1 {
 .caption {
   height: auto;
   padding: 8px 12px;
-  text-align: center;
+  text-align: justify;
   color: #000; /* black caption text */
   background: transparent;
-  font-size: 16px;
+  font-size: 24px;
 }
 
 .slide-arrow {
@@ -161,10 +161,10 @@ h1 {
   color: #fff;
   border: none;
   padding: 8px 12px;
-  font-size: 28px;
+  font-size: 42px;
   cursor: pointer;
   border-radius: 4px;
-  opacity: 0; /* hidden by default */
+  opacity: 0.8; /* always visible */
   transition: opacity 0.2s ease;
 }
 
